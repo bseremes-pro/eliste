@@ -19,5 +19,7 @@
     "titleBar.inactiveBackground": "#84003299",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.remoteColor": "#840032"
+  "peacock.remoteColor": "#840032",
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "markdown.extension.toc.updateOnSave": true
 }

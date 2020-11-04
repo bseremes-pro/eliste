@@ -1,72 +1,46 @@
-# Ionic 5 Full App PRO Version
+# Elistes <!-- omit in toc -->
 
-The most advanced and complete Mobile & PWA starter app template
+La communauté de partage de listes intéressantes !
 
-# Documentation
+_Elistes_ est une application web et mobile qui permet de **créer, partager ou exporter** des **listes de données**, peu importe le sujet
 
-You can find the documentation in https://ionic-5-full-starter-app-docs.ionicthemes.com
+- [Développement](#développement)
+  - [Installation des dépendances](#installation-des-dépendances)
+  - [Lancer l'application web](#lancer-lapplication-web)
+  - [Versionnng avec Git](#versionnng-avec-git)
+  - [Kit de démarrage : Ionic 5 Full App PRO](#kit-de-démarrage--ionic-5-full-app-pro)
+  - [Dépannage](#dépannage)
+- [Déploiement](#déploiement)
+  - [Préparer le build](#préparer-le-build)
+- [Image de marque](#image-de-marque)
+  - [Couleurs](#couleurs)
 
-## Install dependencies
+# Développement
 
-Run `npm install` to install the project dependencies.
+## Installation des dépendances
 
-## Development Workflow
+Exécuter `npm ci`.
 
-Run `ionic build` or `ionic build --prod` to build the project
+## Lancer l'application web
 
-### To test the app in the browser
+Exécuter `npm start` puis naviguer sur http://localhost:4200/.
 
-Run `ionic serve` to start a live-reload dev server
+## Versionnng avec Git
 
-### To test the app with Server Side Rendering
+Nous utilisons le système de versioning [Git](https://git-scm.com/).
 
-Run `npm run dev:ssr`
+### Respect des conventions d'écriture de commits <!-- omit in toc -->
 
-In production, run `npm run build:ssr && npm run serve:ssr`
+Nous utilisons 3 utilitaires node : Husky + Commitlint + Conventional Commits
 
-### To test the app as a Native App
-
-This project uses [Capacitor](https://capacitor.ionicframework.com/docs/) (spiritual successor to Cordova).
-
-[Read this post](https://ionicthemes.com/tutorials/about/native-cross-platform-web-apps-with-ionic-capacitor) to get an introduction about Capacitor and learn the main differences between Capacitor and Cordova.
-
-Before starting make sure to read the [Capacitor Required Dependencies](https://capacitor.ionicframework.com/docs/getting-started/dependencies).
-
-The Capacitor workflow involves a few consistent tasks:
-
-- [Develop and build your Web App](https://capacitor.ionicframework.com/docs/basics/workflow/#1-develop-and-build-your-web-app)
-- [Copy your Web Assets](https://capacitor.ionicframework.com/docs/basics/workflow/#2-copy-your-web-assets)
-- [Open your Native IDE](https://capacitor.ionicframework.com/docs/basics/workflow/#3-open-your-native-ide)
-- [Periodic Maintenance](https://capacitor.ionicframework.com/docs/basics/workflow/#4-periodic-maintenance)
-
-#### iOS Platform
-
-This app has an ios folder which contains the iOS native app.
-Read how to [build this app for iOS](https://capacitor.ionicframework.com/docs/basics/building-your-app#ios).
-
-#### Android Platform
-
-This app has an android folder which contains the Android native app.
-Read how to [build this app for Android](https://capacitor.ionicframework.com/docs/basics/building-your-app#android).
-
-### Want to use Cordova?
-
-The PRO version of the template uses Capacitor instead of Cordova, however, if you are not yet ready to use it, in the following link we show you how to remove Capacitor and add Cordova to this project: https://ionic-4-full-starter-app-docs.ionicthemes.com/capacitor#steps-to-remove-capacitor-and-add-cordova
-
-## Support
-
-Drop us a line to contact@ionicthemes.com
-
-## Acknowledgements
-
-This template uses some icons inspired in [Flaticon](https://www.flaticon.com/). If you want to use the original icons in your app, please make sure you grab a new license that fit your use case when modifying this template. We currently use the `Free for commercial use WITH ATTRIBUTION` license in this template as a way to showcase and promote the awesome work and [designs by **catkuro** from Flaticon](https://www.flaticon.com/packs/home-decor).
-
-### Committing code
+- [Husky](https://github.com/typicode/husky) est un utilitaire permettant de simplifier l'utilisation de hook git.
+- [CommitLint](https://commitlint.js.org/) est un linter d'analyse de message de commits
+- [Conventional Commits](https://www.conventionalcommits.org/fr) est une spécification de message de commits favorisant la génération de CHANGELOG.md
 
 To ensure code quality, we follow and enforce the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines)
 These guidelines define a Commit Message Format and certain rules that will help teams achieve consistency with version control and source code management practices.
 
-#### Commit Message Format
+#### Commit Message Format <!-- omit in toc -->
 
 Each commit message consists of a **header**, a **body** and a **footer**. The header has a special
 format that includes a **type**, a **scope** and a **subject**:
@@ -98,11 +72,11 @@ fix(release): need to depend on latest rxjs and zone.js
 The version in our package.json gets copied to the one we publish, and users need the latest of these.
 ```
 
-#### Revert
+#### Revert <!-- omit in toc -->
 
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
-#### Type
+#### Type <!-- omit in toc -->
 
 Must be one of the following:
 
@@ -116,7 +90,7 @@ Must be one of the following:
 - **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 - **test**: Adding missing tests or correcting existing tests
 
-#### Scope
+#### Scope <!-- omit in toc -->
 
 The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages.
 
@@ -136,7 +110,7 @@ There are currently a few exceptions:
   packages (e.g. `style: add missing semicolons`) and for docs changes that are not related to a
   specific package (e.g. `docs: fix typo in tutorial`).
 
-#### Subject
+#### Subject <!-- omit in toc -->
 
 The subject contains a succinct description of the change:
 
@@ -144,21 +118,29 @@ The subject contains a succinct description of the change:
 - don't capitalize the first letter
 - no dot (.) at the end
 
-#### Body
+#### Body <!-- omit in toc -->
 
 Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
 The body should include the motivation for the change and contrast this with previous behavior.
 
-#### Footer
+#### Footer <!-- omit in toc -->
 
 The footer should contain any information about **Breaking Changes** and is also the place to
 reference GitHub issues that this commit **Closes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
-## Troubleshooting
+## Kit de démarrage : Ionic 5 Full App PRO
 
-### See what dependencies and versions you have installed in your project
+Le projet part du kit de démarrage [Ionic 5 Full App PRO Version](https://ionic-5-full-starter-app-docs.ionicthemes.com).
+
+### Flaticon <!-- omit in toc -->
+
+This template uses some icons inspired in [Flaticon](https://www.flaticon.com/). If you want to use the original icons in your app, please make sure you grab a new license that fit your use case when modifying this template. We currently use the `Free for commercial use WITH ATTRIBUTION` license in this template as a way to showcase and promote the awesome work and [designs by **catkuro** from Flaticon](https://www.flaticon.com/packs/home-decor).
+
+## Dépannage
+
+### See what dependencies and versions you have installed in your project <!-- omit in toc -->
 
 This is useful to track compilation ERRORS
 
@@ -167,38 +149,19 @@ This is useful to track compilation ERRORS
 - To find out which packages need to be updated, you can use `npm outdated -g --depth=0`
 - In particular, run `ng version` to output Angular CLI version and all Angular related installed packages and versions
 
-## Respect des conventions d'écriture de commits
+# Déploiement
 
-### Description
+## Préparer le build
 
-Nous utilisons 3 utilitaires node : Husky + Commitlint +
+Exécuter `npm build`.
 
-- [Husky](https://github.com/typicode/husky) est un utilitaire permettant de simplifier l'utilisation de hook git.
-- [CommitLint](https://commitlint.js.org/) est un linter d'analyse de message de commits
-- [Conventional Commits](https://www.conventionalcommits.org/fr) est une spécification de message de commits favorisant la génération de CHANGELOG.md
+# Image de marque
 
-- `npm install husky --save-dev`
-- Ajouter au `package.json` :
+## Couleurs
 
-```
-  "husky": {
-    "hooks": {
-      "pre-commit": "ng lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
-```
+https://coolors.co/002642-840032-e59500-e5dada-02040f-b3c2f2
 
-- `npm install @commitlint/cli @commitlint/config-conventional --save-dev`
-- Créer le fichier `commitlint.config.js` à la racine avec le contenu :
-
-```
-module.exports = {
-  extends: ['@commitlint/config-conventional']
-};
-```
-
-### Source
-
-- https://www.codeheroes.fr/2020/06/29/git-comment-nommer-ses-branches-et-ses-commits/
-- https://www.codeheroes.fr/2020/07/27/git-lutilisation-des-hooks-avec-husky/
+- #002642
+- #840032
+- #E59500
+- #E5DADA
