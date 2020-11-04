@@ -42,21 +42,9 @@ scripts/build/e2e-generated-tsconfig.json
 
 stats.json
 
-# demo stuff
-demos/node_modules
-demos/polyfills
-demos/css
-demos/fonts
-demos/src/**/*.js
-demos/src/**/*.map
-demos/src/**/*.ngfactory.ts
-demos/src/**/*.d.ts
-demos/src/**/*.metadata.json
-demos/src/**/*.css.shim.ts
-prerender.html
-prerender-domino.html
-prerender-hydrated.html
-prerender-static.html
+# firebase
+# https://stackoverflow.com/questions/52130772/whats-the-purpose-of-firebase-hosting-alphanum-cache
+.firebase/
 
 # stencil
 angular/css/

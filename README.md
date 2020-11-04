@@ -12,6 +12,7 @@ _Elistes_ est une application web et mobile qui permet de **créer, partager ou 
   - [Dépannage](#dépannage)
 - [Déploiement](#déploiement)
   - [Préparer le build](#préparer-le-build)
+  - [Envoyer le build à Firebase](#envoyer-le-build-à-firebase)
 - [Image de marque](#image-de-marque)
   - [Couleurs](#couleurs)
 
@@ -154,6 +155,10 @@ This is useful to track compilation ERRORS
 ## Préparer le build
 
 Exécuter `npm build`.
+
+## Envoyer le build à Firebase
+
+Exécuter `firebase deploy`.
 
 # Image de marque
 
