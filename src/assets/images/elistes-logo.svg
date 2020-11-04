@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="97.599915"
+   inkscape:export-xdpi="97.599915"
+   inkscape:export-filename="C:\Users\bseremes\Downloads\elistes-logo.png"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="5.2459064in"
+   width="4.5355in"
+   sodipodi:docname="elistes-logo.svg"
+   xml:space="preserve"
+   viewBox="0 0 435.408 503.60702"
+   y="0px"
+   x="0px"
+   id="Layer_1"
+   version="1.1"><metadata
+   id="metadata67"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs65" /><sodipodi:namedview
+   inkscape:current-layer="Layer_1"
+   inkscape:window-maximized="1"
+   inkscape:window-y="-11"
+   inkscape:window-x="-11"
+   inkscape:cy="303.30122"
+   inkscape:cx="179.83806"
+   inkscape:zoom="1.2125776"
+   units="in"
+   showgrid="false"
+   id="namedview63"
+   inkscape:window-height="1046"
+   inkscape:window-width="1920"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff" />
+<path
+   id="path2"
+   d="M 435.408,185.215 H 413.025 C 408.246,120.082 350.779,82.714 279.569,73.929 L 257.186,55.62 279.569,37.311 c 37.099,5.215 71.344,19.059 98.752,40.255 36.819,28.46 57.087,66.689 57.087,107.649 z"
+   style="fill:#002642;fill-opacity:1;stroke:none" />
+<path
+   id="path4"
+   d="M 279.569,37.312 V 73.93 C 268.658,72.576 257.422,71.904 245.995,71.904 L 223.612,53.438 245.995,34.972 c 11.371,10e-4 22.607,0.795 33.574,2.34 z"
+   style="fill:#02040f;fill-opacity:1;stroke:none" />
+<polygon
+   transform="translate(-38.296)"
+   id="polygon6"
+   points="364.186,503.607 330.612,503.607 319.421,458.842 364.186,470.033 "
+   style="fill:#ccb7b7;fill-opacity:1;stroke:none" />
+<polygon
+   transform="translate(-38.296)"
+   id="polygon8"
+   points="364.186,470.033 330.612,470.033 319.421,425.268 364.186,436.459 "
+   style="fill:#ff7a23;stroke:none" />
+<path
+   id="path10"
+   d="m 300.251,293.39 c -9.636,-17.828 -39.819,-37.983 -58.486,-70.449 l 50.551,213.518 h 33.574 v -45.347 c 0,-35.521 -9.882,-68.558 -25.639,-97.722 z"
+   style="fill:#660027;fill-opacity:1;stroke:none" />
+<path
+   id="path12"
+   d="m 292.316,391.112 v 45.347 h -22.147 c 0,0 0,-47.272 0,-85.4 0,-46.488 -5.417,-73.874 -12.803,-94.331 8.181,14.481 16.071,25.986 19.54,36.663 9.479,29.163 15.41,62.2 15.41,97.721 z"
+   style="fill:#840032;fill-opacity:1;stroke:none" />
+<path
+   id="path14"
+   d="m 216.73,101.046 c 0,-10.341 -0.034,-29.142 -0.034,-29.142 h 29.299 V 34.973 C 237.3,14.426 216.954,0 193.24,0 H 145.263 L 86.99,351.059 H 270.168 C 270.169,205.08 216.73,247.483 216.73,101.046 Z"
+   style="fill:#b3c2f2;fill-opacity:1;stroke:none" />
+<polygon
+   transform="translate(-38.296)"
+   id="polygon16"
+   points="86.93,465.955 94.253,447.65 38.296,470.033 38.296,503.607 71.87,503.607 237.199,503.607 237.199,470.033 154.534,447.65 "
+   style="fill:#e5dada;fill-opacity:1;stroke:none" />
+<polygon
+   transform="translate(-38.296)"
+   id="polygon18"
+   points="86.93,432.381 94.253,414.077 38.296,436.459 38.296,470.033 71.87,470.033 237.199,470.033 237.199,436.459 154.534,414.077 "
+   style="fill:#ff9926;stroke:none" />
+<path
+   id="path20"
+   d="m 145.263,101.046 c 0,-45.716 0,-79.122 0,-101.046 -0.481,0 -0.962,0 -1.444,0.011 v 0 0 C 64.473,0.783 0,65.335 0,144.86 v 291.599 h 33.574 v 0 0 h 165.328 v -85.4 C 198.903,205.08 145.263,247.483 145.263,101.046 Z"
+   style="fill:#840032;fill-opacity:1;stroke:none" />
+<path
+   id="path22"
+   d="m 292.316,470.033 v 33.574 h -22.147 c 0,0 0,-13.877 0,-33.574 z"
+   style="fill:#e5dada;fill-opacity:1;stroke:none" />
+<rect
+   id="rect24"
+   height="33.574001"
+   width="22.148001"
+   style="fill:#ff9926;stroke:none"
+   y="436.45901"
+   x="270.16901" />
+<circle
+   style="fill:#02040f;fill-opacity:1;stroke:none"
+   id="circle26"
+   r="8.3929996"
+   cy="38.464001"
+   cx="216.69699" />
+
+
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g32">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g34">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g36">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g38">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g40">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g42">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g44">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g46">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g48">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g50">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g52">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g54">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g56">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g58">
+</g>
+<g
+   transform="translate(-38.296)"
+   style="stroke:none"
+   id="g60">
+</g>
+</svg>

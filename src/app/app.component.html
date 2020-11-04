@@ -1,4 +1,4 @@
-<ion-app dir="{{textDir}}">
+<ion-app dir="{{ textDir }}">
   <!-- when=false means that the split pane will never expand automatically -->
   <!-- For more info check https://ionicframework.com/docs/api/split-pane -->
   <ion-split-pane contentId="menu-content" when="false">
@@ -7,13 +7,16 @@
         <ion-toolbar>
           <ion-row class="user-details-wrapper">
             <ion-col size="4">
-              <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-                <app-image-shell class="user-avatar" animation="spinner" [src]="'./assets/sample-images/ionicthemes_logo.jpg'"></app-image-shell>
+              <app-aspect-ratio [ratio]="{ w: 1, h: 1 }">
+                <app-image-shell
+                  animation="spinner"
+                  [src]="'./assets/images/elistes-logo.svg'"
+                ></app-image-shell>
               </app-aspect-ratio>
             </ion-col>
             <ion-col class="user-info-wrapper" size="8">
-              <h3 class="user-name">Ionic Themes</h3>
-              <h5 class="user-handle">@IonicThemes</h5>
+              <h3 class="user-name">Elistes</h3>
+              <h5 class="user-handle">@bseremes</h5>
             </ion-col>
           </ion-row>
           <ion-row class="user-stats-wrapper user-details-wrapper">
@@ -33,11 +36,18 @@
           <ion-list-header>
             <ion-label>Layouts</ion-label>
           </ion-list-header>
-          <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
+          <ion-menu-toggle
+            autoHide="false"
+            *ngFor="let p of appPages; let i = index"
+          >
             <ion-item [routerLink]="p.url">
-              <ion-icon slot="start" [name]="p.ionicIcon? p.ionicIcon: ''" [src]="p.customIcon? p.customIcon: ''"></ion-icon>
+              <ion-icon
+                slot="start"
+                [name]="p.ionicIcon ? p.ionicIcon : ''"
+                [src]="p.customIcon ? p.customIcon : ''"
+              ></ion-icon>
               <ion-label>
-                {{p.title}}
+                {{ p.title }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -48,16 +58,15 @@
           </ion-list-header>
           <ion-menu-toggle autoHide="false">
             <ion-item [routerLink]="['/forms-and-validations']">
-              <ion-icon slot="start" src="./assets/custom-icons/side-menu/forms.svg"></ion-icon>
-              <ion-label>
-                Forms & Validations
-              </ion-label>
+              <ion-icon
+                slot="start"
+                src="./assets/custom-icons/side-menu/forms.svg"
+              ></ion-icon>
+              <ion-label> Forms & Validations </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/forms-filters']">
               <ion-icon slot="start" name="options-outline"></ion-icon>
-              <ion-label>
-                Filters
-              </ion-label>
+              <ion-label> Filters </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
@@ -68,15 +77,11 @@
           <ion-menu-toggle auto-hide="false">
             <ion-item [routerLink]="['/firebase/auth/sign-in']">
               <ion-icon slot="start" name="logo-firebase"></ion-icon>
-              <ion-label>
-                Firebase Auth
-              </ion-label>
+              <ion-label> Firebase Auth </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/firebase/crud/listing']">
               <ion-icon slot="start" name="logo-firebase"></ion-icon>
-              <ion-label>
-                Firebase CRUD
-              </ion-label>
+              <ion-label> Firebase CRUD </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
@@ -87,15 +92,11 @@
           <ion-menu-toggle auto-hide="false">
             <ion-item [routerLink]="['/maps']">
               <ion-icon slot="start" name="map-outline"></ion-icon>
-              <ion-label>
-                Maps & Geolocation
-              </ion-label>
+              <ion-label> Maps & Geolocation </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/video-playlist']">
               <ion-icon slot="start" name="videocam-outline"></ion-icon>
-              <ion-label>
-                Video Playlist
-              </ion-label>
+              <ion-label> Video Playlist </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
@@ -103,11 +104,18 @@
           <ion-list-header>
             <ion-label>Account</ion-label>
           </ion-list-header>
-          <ion-menu-toggle autoHide="false" *ngFor="let p of accountPages; let i = index">
+          <ion-menu-toggle
+            autoHide="false"
+            *ngFor="let p of accountPages; let i = index"
+          >
             <ion-item [routerLink]="p.url">
-              <ion-icon slot="start" [name]="p.ionicIcon? p.ionicIcon: ''" [src]="p.customIcon? p.customIcon: ''"></ion-icon>
+              <ion-icon
+                slot="start"
+                [name]="p.ionicIcon ? p.ionicIcon : ''"
+                [src]="p.customIcon ? p.customIcon : ''"
+              ></ion-icon>
               <ion-label>
-                {{p.title}}
+                {{ p.title }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -119,21 +127,15 @@
           <ion-menu-toggle autoHide="false">
             <ion-item [routerLink]="['/showcase/app-shell']">
               <ion-icon slot="start" name="egg-outline"></ion-icon>
-              <ion-label>
-                App Shell
-              </ion-label>
+              <ion-label> App Shell </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/showcase/route-resolvers-ux']">
               <ion-icon slot="start" name="cog-outline"></ion-icon>
-              <ion-label>
-                Route Resolvers UX
-              </ion-label>
+              <ion-label> Route Resolvers UX </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/showcase/custom-components']">
               <ion-icon slot="start" name="color-wand-outline"></ion-icon>
-              <ion-label>
-                Custom Components
-              </ion-label>
+              <ion-label> Custom Components </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
