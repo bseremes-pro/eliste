@@ -1,14 +1,16 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyC5QK355uuknu0_ldVxFqqNqgp9oJi_eLc',
-    authDomain: 'ion4fullpwa.firebaseapp.com',
-    databaseURL: 'https://ion4fullpwa.firebaseio.com',
-    projectId: 'ion4fullpwa',
-    storageBucket: 'ion4fullpwa.appspot.com'
+    apiKey: 'AIzaSyBXpfMT7A9TcuauqSJSJZkHZkOZiQubZfU',
+    authDomain: 'elistes.firebaseapp.com',
+    databaseURL: 'https://elistes.firebaseio.com',
+    projectId: 'elistes',
+    storageBucket: 'elistes.appspot.com',
+    messagingSenderId: '958663013805',
+    appId: '1:958663013805:web:9861ab3dc2d21b55925d24',
   },
   appShellConfig: {
     debug: false,
-    networkDelay: 500
-  }
+    networkDelay: 500,
+  },
 };

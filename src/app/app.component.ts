@@ -5,64 +5,66 @@ const { SplashScreen } = Plugins;
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HistoryHelperService } from './utils/history-helper.service';
 
+import { AuthService } from './services/auth.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: [
     './side-menu/styles/side-menu.scss',
     './side-menu/styles/side-menu.shell.scss',
-    './side-menu/styles/side-menu.responsive.scss'
-  ]
+    './side-menu/styles/side-menu.responsive.scss',
+  ],
 })
 export class AppComponent {
   appPages = [
     {
       title: 'Categories',
       url: '/app/categories',
-      ionicIcon: 'list-outline'
+      ionicIcon: 'list-outline',
     },
     {
       title: 'Profile',
       url: '/app/user',
-      ionicIcon: 'person-outline'
+      ionicIcon: 'person-outline',
     },
     {
       title: 'Contact Card',
       url: '/contact-card',
-      customIcon: './assets/custom-icons/side-menu/contact-card.svg'
+      customIcon: './assets/custom-icons/side-menu/contact-card.svg',
     },
     {
       title: 'Notifications',
       url: '/app/notifications',
-      ionicIcon: 'notifications-outline'
-    }
+      ionicIcon: 'notifications-outline',
+    },
   ];
   accountPages = [
     {
       title: 'Log In',
       url: '/auth/login',
-      ionicIcon: 'log-in-outline'
+      ionicIcon: 'log-in-outline',
     },
     {
       title: 'Sign Up',
       url: '/auth/signup',
-      ionicIcon: 'person-add-outline'
+      ionicIcon: 'person-add-outline',
     },
     {
       title: 'Tutorial',
       url: '/walkthrough',
-      ionicIcon: 'school-outline'
+      ionicIcon: 'school-outline',
     },
     {
       title: 'Getting Started',
       url: '/getting-started',
-      ionicIcon: 'rocket-outline'
+      ionicIcon: 'rocket-outline',
     },
     {
       title: '404 page',
       url: '/page-not-found',
-      ionicIcon: 'alert-circle-outline'
-    }
+      ionicIcon: 'alert-circle-outline',
+    },
   ];
 
   textDir = 'ltr';
@@ -71,7 +73,8 @@ export class AppComponent {
   constructor(
     public translate: TranslateService,
     public historyHelper: HistoryHelperService,
-    private seoService: SeoService
+    private seoService: SeoService,
+    private authService: AuthService
   ) {
     this.initializeApp();
     this.setLanguage();
@@ -79,9 +82,9 @@ export class AppComponent {
 
   async initializeApp() {
     try {
-     await SplashScreen.hide();
+      await SplashScreen.hide();
     } catch (err) {
-     console.log('This is normal in a browser', err);
+      console.log('This is normal in a browser', err);
     }
   }
 
@@ -99,4 +102,11 @@ export class AppComponent {
     // });
   }
 
+  doLogout() {
+    return this.authService.seDeconnecter();
+  }
+
+  isAuthenticated() {
+    return this.authService.utilisateur$;
+  }
 }

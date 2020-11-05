@@ -4,14 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from '../../components/components.module';
 
-import { SignupPage } from './signup.page';
+import { InscriptionPage } from './inscription.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignupPage,
+    component: InscriptionPage,
   },
 ];
 
@@ -24,6 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ComponentsModule,
   ],
-  declarations: [SignupPage],
+  declarations: [InscriptionPage],
 })
-export class SignupPageModule {}
+export class InscriptionPageModule {}

@@ -1,48 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {
-  ModalController,
-  MenuController,
-  IonRouterOutlet,
-} from '@ionic/angular';
+import { ModalController, MenuController } from '@ionic/angular';
 
-import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy.page';
-import { PasswordValidator } from '../validators/password.validator';
-import { AuthService } from '../services/auth.service';
+import { TermsOfServicePage } from '../../terms-of-service/terms-of-service.page';
+import { PrivacyPolicyPage } from '../../privacy-policy/privacy-policy.page';
+import { PasswordValidator } from '../../validators/password.validator';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.page.html',
-  styleUrls: ['./styles/signup.page.scss'],
+  selector: 'app-inscription',
+  templateUrl: './inscription.page.html',
+  styleUrls: ['./styles/inscription.page.scss'],
 })
-export class SignupPage {
+export class InscriptionPage implements OnInit {
   signupForm: FormGroup;
   matching_passwords_group: FormGroup;
 
   validation_messages = {
     email: [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Enter a valid email.' },
+      { type: 'required', message: 'Email requis.' },
+      { type: 'pattern', message: 'Email invalide.' },
     ],
     password: [
-      { type: 'required', message: 'Password is required.' },
+      { type: 'required', message: 'Mot de passe requis.' },
       {
         type: 'minlength',
-        message: 'Password must be at least 5 characters long.',
+        message: 'Le mot de passe doit contenir au moins 5 symboles.',
       },
     ],
     confirm_password: [
-      { type: 'required', message: 'Confirm password is required' },
+      { type: 'required', message: 'Veuillez confirmer le mot de passe' },
     ],
-    matching_passwords: [{ type: 'areNotEqual', message: 'Password mismatch' }],
+    matching_passwords: [
+      { type: 'areNotEqual', message: 'Les mots de passe sont différents' },
+    ],
   };
 
   constructor(
     public router: Router,
     public modalController: ModalController,
     public menu: MenuController,
-    private routerOutlet: IonRouterOutlet,
     public auth: AuthService
   ) {
     this.matching_passwords_group = new FormGroup(
@@ -60,7 +59,7 @@ export class SignupPage {
 
     this.signupForm = new FormGroup({
       email: new FormControl(
-        'test@test.com',
+        '',
         Validators.compose([
           Validators.required,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
@@ -70,21 +69,13 @@ export class SignupPage {
     });
   }
 
-  // Disable side menu for this page
-  ionViewDidEnter(): void {
+  ngOnInit(): void {
     this.menu.enable(false);
-  }
-
-  // Restore to default when leaving this page
-  ionViewDidLeave(): void {
-    this.menu.enable(true);
   }
 
   async showTermsModal() {
     const modal = await this.modalController.create({
-      component: PrivacyPolicyPage,
-      swipeToClose: true,
-      presentingElement: this.routerOutlet.nativeEl,
+      component: TermsOfServicePage,
     });
     return await modal.present();
   }
@@ -92,14 +83,11 @@ export class SignupPage {
   async showPrivacyModal() {
     const modal = await this.modalController.create({
       component: PrivacyPolicyPage,
-      swipeToClose: true,
-      presentingElement: this.routerOutlet.nativeEl,
     });
     return await modal.present();
   }
 
-  doSignup(): void {
-    console.log('do sign up');
+  lancerInscription(): void {
     if (this.signupForm.valid && this.matching_passwords_group.valid) {
       const infos = {
         email: this.signupForm.value.email,
@@ -107,20 +95,5 @@ export class SignupPage {
       };
       this.auth.sInscrire(infos);
     }
-  }
-
-  doFacebookSignup(): void {
-    console.log('facebook signup');
-    this.router.navigate(['app/categories']);
-  }
-
-  doGoogleSignup(): void {
-    console.log('google signup');
-    this.router.navigate(['app/categories']);
-  }
-
-  doTwitterSignup(): void {
-    console.log('twitter signup');
-    this.router.navigate(['app/categories']);
   }
 }

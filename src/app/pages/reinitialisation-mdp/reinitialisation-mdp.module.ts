@@ -4,15 +4,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { ComponentsModule } from '../components/components.module';
 
-import { SignupPage } from './signup.page';
+import { ComponentsModule } from '../../components/components.module';
+
+import { ReinitialisationMdpPage } from './reinitialisation-mdp.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignupPage,
-  },
+    component: ReinitialisationMdpPage
+  }
 ];
 
 @NgModule({
@@ -22,8 +23,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule,
+    ComponentsModule
   ],
-  declarations: [SignupPage],
+  declarations: [ReinitialisationMdpPage]
 })
-export class SignupPageModule {}
+export class ReinitialisationMdpPageModule { }

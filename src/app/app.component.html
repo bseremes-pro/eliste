@@ -51,6 +51,12 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item (click)="doLogout()">
+              <ion-icon slot="start" name="log-out-outline"></ion-icon>
+              <ion-label> Déconnexion </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
         <ion-list>
           <ion-list-header>
