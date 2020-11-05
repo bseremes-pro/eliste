@@ -9,6 +9,8 @@ _Elistes_ est une application web et mobile qui permet de **créer, partager ou 
   - [Lancer l'application web](#lancer-lapplication-web)
   - [Versionnng avec Git](#versionnng-avec-git)
   - [Kit de démarrage : Ionic 5 Full App PRO](#kit-de-démarrage--ionic-5-full-app-pro)
+  - [Particularités PWA](#particularités-pwa)
+    - [Modifier l'icône/le splashscreen de l'app mobile](#modifier-licônele-splashscreen-de-lapp-mobile)
   - [Dépannage](#dépannage)
 - [Déploiement](#déploiement)
   - [Préparer le build](#préparer-le-build)
@@ -32,7 +34,7 @@ Nous utilisons le système de versioning [Git](https://git-scm.com/).
 
 ### Respect des conventions d'écriture de commits <!-- omit in toc -->
 
-Nous utilisons 3 utilitaires node : Husky + Commitlint + Conventional Commits
+Nous utilisons 3 utilitaires nodejs : Husky + Commitlint + Conventional Commits
 
 - [Husky](https://github.com/typicode/husky) est un utilitaire permettant de simplifier l'utilisation de hook git.
 - [CommitLint](https://commitlint.js.org/) est un linter d'analyse de message de commits
@@ -138,6 +140,30 @@ Le projet part du kit de démarrage [Ionic 5 Full App PRO Version](https://ionic
 ### Flaticon <!-- omit in toc -->
 
 This template uses some icons inspired in [Flaticon](https://www.flaticon.com/). If you want to use the original icons in your app, please make sure you grab a new license that fit your use case when modifying this template. We currently use the `Free for commercial use WITH ATTRIBUTION` license in this template as a way to showcase and promote the awesome work and [designs by **catkuro** from Flaticon](https://www.flaticon.com/packs/home-decor).
+
+## Particularités PWA
+
+Le site web se veut de type **PWA** (Progressive Web Application) et possède donc certaines particularités d'intégration sur mobile.
+
+Une partie de ces dernières est décrite par le [Manifeste](https://developer.mozilla.org/fr/docs/Web/Manifest).
+
+### Modifier l'icône/le splashscreen de l'app mobile
+
+Nous utilisons un outil nodejs [Pwa-Asset-Generator](https://github.com/onderceylan/pwa-asset-generator) qui :
+
+- génère les tailles d'images nécessaires
+- met à jour le manifeste
+- met à jour l'index.html
+
+Nous exécutons le kata suivant :
+
+- Se placer dans le dossier cible `cd [root]/src/assets/icon`
+
+- Si pas déjà le cas, installer pwa-asset-generator globalement : `npm install -g pwa-asset-generator`
+
+- Lancer la commande `pwa-asset-generator ../sample-images/mon-app-icone.png -i ../../index.html -m ../../manifest.webmanifest --path "assets/icon" --single-quotes -t png`
+
+L'outil cloud : [Maskable](https://maskable.app/) peut également s'avérer utile lors de la création de l'image de base.
 
 ## Dépannage
 
