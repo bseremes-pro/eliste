@@ -11,6 +11,7 @@ _Elistes_ est une application web et mobile qui permet de **créer, partager ou 
   - [Kit de démarrage : Ionic 5 Full App PRO](#kit-de-démarrage--ionic-5-full-app-pro)
   - [Particularités PWA](#particularités-pwa)
     - [Modifier l'icône/le splashscreen de l'app mobile](#modifier-licônele-splashscreen-de-lapp-mobile)
+    - [Favicon](#favicon)
   - [Dépannage](#dépannage)
 - [Déploiement](#déploiement)
   - [Préparer le build](#préparer-le-build)
@@ -164,6 +165,10 @@ Nous exécutons le kata suivant :
 - Lancer la commande `pwa-asset-generator ../sample-images/mon-app-icone.png -i ../../index.html -m ../../manifest.webmanifest --path "assets/icon" --single-quotes -t png`
 
 L'outil cloud : [Maskable](https://maskable.app/) peut également s'avérer utile lors de la création de l'image de base.
+
+### Favicon
+
+L'outil cloud : [Favicon.io](https://favicon.io/) peut également s'avérer utile lors de la création du favicon en _.ico_.
 
 ## Dépannage
 
