@@ -1,0 +1,57 @@
+<!-- EN-TÊTE -->
+<ion-header>
+  <!-- TOOLBAR -->
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/app/listes/nouveau']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- RECHERCHE -->
+  <ion-toolbar class="filters-toolbar">
+    <ion-row class="searchbar-row" align-items-center>
+      <ion-col>
+        <ion-searchbar
+          class="items-searchbar"
+          animated
+          [(ngModel)]="requete"
+          (ionChange)="rechercher()"
+          placeholder="Rechercher"
+        ></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<!--CONTENU -->
+<ion-content class="fashion-listing-content">
+  <!-- LISTE DE LISTES -->
+  <ion-list class="friends-list">
+    <ion-item
+      class="friend-item"
+      *ngFor="let liste of livres; let index = index"
+      [routerLink]="['/app/listes/details/', liste?.id]"
+    >
+      <ion-thumbnail slot="start">
+        <app-aspect-ratio [ratio]="{w: 3, h: 3}">
+          <app-image-shell
+            class="item-image"
+            animation="spinner"
+            [src]="'https://picsum.photos/300/400?random=' + index"
+            [alt]="'product image'"
+          >
+          </app-image-shell>
+        </app-aspect-ratio>
+      </ion-thumbnail>
+      <h4 class="ion-text-wrap">
+        <app-text-shell [data]="liste?.titre"></app-text-shell>
+      </h4>
+    </ion-item>
+  </ion-list>
+</ion-content>

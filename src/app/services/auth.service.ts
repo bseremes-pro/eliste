@@ -58,28 +58,28 @@ export class AuthService {
       identifiants.email,
       identifiants.password
     );
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
   async sInscrireAvecGoogle() {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
   async sInscrireAvecFacebook() {
     const provider = new auth.FacebookAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
   async sInscrireAvecTwitter() {
     const provider = new auth.TwitterAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
@@ -88,28 +88,28 @@ export class AuthService {
       identifiants.email,
       identifiants.password
     );
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
   async seConnecterAvecGoogle() {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
   async seConnecterAvecFacebook() {
     const provider = new auth.FacebookAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 
   async seConnecterAvecTwitter() {
     const provider = new auth.TwitterAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    this.router.navigate(['app']);
+    this.router.navigate(['app/accueil']);
     return this.mettreAJourUtilisateur(credential.user);
   }
 

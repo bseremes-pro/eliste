@@ -1,0 +1,70 @@
+<!-- This is the proper way if you have submit button outside your ion-content form (typically in the ion-header or ion-footer) -->
+<!-- (ref: https://github.com/ionic-team/ionic/issues/16661) -->
+<form
+  class="update-user-form ion-page"
+  [formGroup]="createUserForm"
+  (ngSubmit)="createUser()"
+>
+  <!-- EN-TÊTE -->
+  <ion-header>
+    <!-- TOOLBAR -->
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/listes"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Nouvelle</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="update-user-content">
+    <section class="user-details-fields fields-section">
+      <ion-list class="inputs-list" lines="full">
+        <!-- TITRE -->
+        <ion-item class="input-item">
+          <ion-label color="secondary" position="floating">Titre</ion-label>
+          <ion-input type="text" formControlName="titre" required></ion-input>
+        </ion-item>
+
+        <!-- DESCRIPTION -->
+        <ion-item class="input-item">
+          <ion-label color="secondary" position="floating"
+            >Description</ion-label
+          >
+          <ion-textarea
+            type="text"
+            formControlName="desc"
+            rows="4"
+            required
+          ></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </section>
+  </ion-content>
+
+  <ion-footer>
+    <ion-row class="form-actions-wrapper">
+      <ion-col>
+        <ion-button
+          class="delete-btn"
+          expand="block"
+          color="primary"
+          fill="outline"
+          (click)="annuler()"
+        >
+          ANNULER
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button
+          class="submit-btn"
+          expand="block"
+          color="tertiary"
+          type="submit"
+          fill="solid"
+          [disabled]="!createUserForm.valid"
+          >CRÉER</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+</form>

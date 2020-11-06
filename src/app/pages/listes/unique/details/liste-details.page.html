@@ -1,0 +1,65 @@
+<!-- EN-TÊTE -->
+<ion-header>
+  <!-- TOOLBAR -->
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/listes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Liste</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="interagir()">
+        <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- CONTENU -->
+<ion-content class="livre-details">
+  <div class="section-wrapper">
+    <!-- TITRE -->
+    <h2 class="details-titre">
+      <app-text-shell
+        animation="gradient"
+        [data]="produit?.titre"
+      ></app-text-shell>
+    </h2>
+    <!-- DESCRIPTION -->
+    <p class="details-description">
+      <app-text-shell [data]="produit?.desc"></app-text-shell>
+    </p>
+  </div>
+
+  <!-- TOUS -->
+  <div class="chapitres-wrapper">
+    <ul class="chapitres-liste">
+      <li
+        class="chapitre-item"
+        *ngFor="let chapitre of produit?.schema; let index = index"
+      >
+        <div class="schedule-outer">
+          <span class="schedule-day"
+            >{{ index + 1 }}. {{chapitre.titre}} &nbsp;
+            <ion-icon
+              slot="start"
+              color="tertiary"
+              name="open-outline"
+              [routerLink]="['/app/chapitres/edition', chapitre?.id]"
+            ></ion-icon
+          ></span>
+          <div class="schedule-hours">
+            <span class="schedule-value">
+              <ion-button size="small" fill="clear" class="schedule-value"
+                ><ion-icon
+                  slot="end"
+                  name="caret-forward-circle-outline"
+                ></ion-icon>
+                Lire
+              </ion-button>
+            </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ion-content>

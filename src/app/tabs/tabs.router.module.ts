@@ -127,6 +127,11 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'listes',
+        loadChildren: () =>
+          import('../pages/listes/listes.module').then((m) => m.LivresModule),
+      },
     ],
   },
 ];

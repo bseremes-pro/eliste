@@ -1,0 +1,250 @@
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+:host {
+  --page-margin: var(--app-fair-margin);
+  --page-background: var(--app-background);
+
+  --page-items-gutter: calc(var(--page-margin) / 2);
+
+  --page-item-titre-color: var(--ion-color-primary);
+  --page-item-commune-color: var(--ion-color-primary);
+  --page-item-prix-color: var(--ion-color-secondary);
+  --page-item-boutique-color: var(--ion-color-tertiary);
+
+  --page-color: #f18f01;
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+.filters-toolbar {
+  --background: var(--page-background);
+  --padding-start: var(--page-margin);
+  --padding-end: var(--page-margin);
+  --padding-top: var(--page-margin);
+  --padding-bottom: var(--page-margin);
+
+  .searchbar-row {
+    --ion-grid-column-padding: 0px;
+
+    ion-searchbar.items-searchbar {
+      padding: 0px;
+      // override Ionic fixed height
+      height: 100%;
+      // Learn more about CSS contain property here: https://termvader.github.io/css-contain/
+      contain: content;
+    }
+
+    .call-to-action-col {
+      padding-inline-start: var(--page-margin);
+      max-width: fit-content;
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      display: flex;
+      justify-content: flex-end;
+
+      .filters-btn {
+        --padding-start: 0px;
+        --padding-end: 0px;
+
+        margin: 0px;
+        font-size: 18px;
+        // override Ionic fixed height
+        height: initial;
+      }
+    }
+  }
+
+  .range-item-row {
+    --ion-grid-column-padding: 0px;
+
+    margin-top: var(--page-margin);
+    padding-top: var(--page-margin);
+    // box-shadow at the top
+    box-shadow: inset 0 6px 3px -8px var(--ion-color-darkest);
+
+    .range-header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: calc(var(--page-margin) / 2);
+
+      .range-value {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        color: var(--ion-color-medium);
+      }
+
+      .range-label {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        color: var(--ion-color-medium);
+      }
+    }
+
+    .range-control {
+      // override the pin color
+      --ion-text-color: var(--ion-color-medium);
+
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+.fashion-listing-content {
+  --background: var(--page-background);
+  --padding-start: var(--page-margin);
+  --padding-end: var(--page-margin);
+  --padding-top: var(--page-margin);
+  --padding-bottom: var(--page-margin);
+}
+
+.items-row {
+  --ion-grid-column-padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  .listing-item {
+    margin-bottom: calc(var(--page-margin) * 2);
+
+    &:nth-child(odd) {
+      padding-right: var(--page-items-gutter);
+    }
+
+    &:nth-child(even) {
+      padding-left: var(--page-items-gutter);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .item-image-wrapper {
+      .image-anchor {
+        display: block;
+      }
+    }
+
+    .item-body {
+      --ion-grid-column-padding: 0px;
+
+      padding: 5px 5px 0px;
+      text-align: left;
+
+      .main-info {
+        .item-name {
+          margin: 0px;
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 18px;
+
+          .name-anchor {
+            color: var(--page-item-titre-color);
+            display: block;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .secondary-info {
+        .separator {
+          max-width: 0px;
+          border-right: solid 2px var(--ion-color-light-shade);
+          align-self: stretch;
+        }
+
+        .item-sale-price {
+          display: block;
+          font-weight: bold;
+          color: var(--page-item-prix-color);
+          font-size: 18px;
+        }
+
+        .item-commune {
+          display: block;
+          color: var(--page-item-commune-color);
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        .item-boutique {
+          display: block;
+          font-weight: normal;
+          color: var(--page-item-boutique-color);
+          font-size: 14px;
+          line-height: 16px;
+        }
+
+        .item-original-price {
+          display: block;
+          text-decoration: line-through;
+          color: var(--ion-color-medium-shade);
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.friends-list {
+  --background: var(--page-background);
+  padding: 0;
+  margin-bottom: calc(var(--page-margin) * 3);
+}
+
+.friend-item {
+  --background: var(--page-background);
+  --padding-start: 0;
+}
+
+.user-details-section {
+  --ion-grid-column-padding: 0px;
+
+  width: 100%;
+  align-items: center;
+
+  .user-data-wrapper {
+    padding-left: var(--page-margin);
+    padding-right: calc(var(--page-margin) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .user-info {
+      &:not(:last-child) {
+        margin-bottom: calc(var(--page-margin) / 2);
+      }
+
+      .user-name {
+        margin: 0px;
+        margin-bottom: 4px;
+        font-size: 16px;
+      }
+
+      .user-job {
+        margin: 0px;
+        color: rgba(var(--ion-color-dark-rgb), 0.4);
+        font-size: 14px;
+      }
+    }
+  }
+
+  .user-actions-wrapper {
+    font-size: 14px;
+
+    // Make sure we always have space for 10 characters
+    // As ch (width of the character '0') unit is not 100% supported, we will use ex (height of the 'x' character) as a fallback
+    // See: https://www.quirksmode.org/css/units-values/
+    max-width: 10ex; // The 'x' character is semi-square char
+    max-width: 10ch; // ch is the only font unit based on the width of characters
+
+    .user-action {
+      margin: 0px;
+    }
+  }
+}

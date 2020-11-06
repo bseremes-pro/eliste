@@ -8,7 +8,7 @@ import {
 
 const redirectUnauthorizedToHome = () =>
   redirectUnauthorizedTo(['/auth/login']);
-const redirectLoggedInToAccount = () => redirectLoggedInTo(['/app']);
+const redirectLoggedInToAccount = () => redirectLoggedInTo(['/app/accueil']);
 
 const routes: Routes = [
   {
@@ -89,8 +89,27 @@ const routes: Routes = [
     path: 'app',
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToHome },
-    loadChildren: () =>
-      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
+    children: [
+      {
+        path: 'accueil',
+        loadChildren: () =>
+          import('./pages/listes/listes.module').then((m) => m.LivresModule),
+      },
+      {
+        path: 'listes',
+        loadChildren: () =>
+          import('./pages/listes/listes.module').then((m) => m.LivresModule),
+      },
+      {
+        path: 'parametres',
+        loadChildren: () =>
+          import('./pages/parametres/parametres.module').then(
+            (m) => m.MonComptePageModule
+          ),
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToHome },
+      },
+    ],
   },
   {
     path: 'contact-card',
