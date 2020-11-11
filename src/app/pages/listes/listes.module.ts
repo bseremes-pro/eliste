@@ -10,6 +10,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { ComponentsModule } from '../../components/components.module';
 import { environment } from '../../../environments/environment';
+import { FirebaseCreateUserModal } from './pops/champs/liste-champs.modal';
 
 const firebaseRoutes: Routes = [
   {
@@ -59,5 +60,6 @@ const firebaseRoutes: Routes = [
     AngularFirestoreModule,
     AngularFireStorageModule,
   ],
+  declarations: [FirebaseCreateUserModal],
 })
 export class LivresModule {}
