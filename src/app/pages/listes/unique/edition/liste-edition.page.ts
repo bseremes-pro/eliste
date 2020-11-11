@@ -1,12 +1,17 @@
 import { Component, OnInit, HostBinding, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormGroup, FormControl, FormArray } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import {
+  ModalController,
+  AlertController,
+  IonRouterOutlet,
+} from '@ionic/angular';
 
 import { LivresService } from '../../listes.service';
 import { ListesService } from '../../../../services/listes.service';
 
 import { LivreCompletModel } from '../liste-details.model';
+import { FirebaseCreateUserModal } from '../../pops/champs/liste-champs.modal';
 
 import { DataStore, ShellModel } from '../../../../shell/data-store';
 import { takeUntil, catchError } from 'rxjs/operators';
@@ -48,7 +53,9 @@ export class LivreEditionPage implements OnInit, OnDestroy {
     public livresService: LivresService,
     public listesService: ListesService,
     public router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public modalController: ModalController,
+    private routerOutlet: IonRouterOutlet
   ) {}
 
   ngOnInit() {
@@ -70,6 +77,39 @@ export class LivreEditionPage implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.destroy$.next(null);
+  }
+
+  async creerChamps() {
+    const modal = await this.modalController.create({
+      component: FirebaseCreateUserModal,
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl,
+    });
+
+    modal.onDidDismiss().then((avatar) => {
+      if (avatar.data != null) {
+        this.livre.schema.push(avatar.data);
+      }
+    });
+    await modal.present();
+  }
+
+  async modifierChamps(index) {
+    const modal = await this.modalController.create({
+      component: FirebaseCreateUserModal,
+      componentProps: {
+        champs: this.livre.schema[index],
+      },
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl,
+    });
+
+    modal.onDidDismiss().then((avatar) => {
+      if (avatar.data != null) {
+        this.livre.schema[index] = avatar.data;
+      }
+    });
+    await modal.present();
   }
 
   annuler() {

@@ -67,6 +67,53 @@
         </ion-item>
       </ion-list>
     </section>
+
+    <!-- SCHEMA -->
+    <div class="section-wrapper">
+      <h3 class="details-sous-titre">Schéma</h3>
+    </div>
+    <!-- TOUS -->
+    <div class="chapitres-wrapper">
+      <ul class="chapitres-liste">
+        <li
+          class="chapitre-item"
+          *ngFor="let chapitre of livre?.schema; let index = index"
+        >
+          <div class="schedule-outer">
+            <span class="schedule-day"
+              >{{ chapitre.label | capitalize }} &nbsp;
+              <ion-icon
+                slot="start"
+                color="tertiary"
+                name="open-outline"
+                (click)="modifierChamps(index)"
+              ></ion-icon
+            ></span>
+            <div class="schedule-hours">
+              <span class="schedule-value">
+                {{ chapitre.type | capitalize }}
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- AJOUTER CHAMPS -->
+    <ion-row class="section-wrapper">
+      <ion-col size="8" offset="2">
+        <ion-button
+          color="tertiary"
+          size="small"
+          fill="clear"
+          class="schedule-value"
+          (click)="creerChamps()"
+          ><ion-icon slot="end" name="duplicate-outline"></ion-icon>
+          Ajouter un champs
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
     <section class="">
       <ion-row class="form-actions-wrapper">
         <ion-col>

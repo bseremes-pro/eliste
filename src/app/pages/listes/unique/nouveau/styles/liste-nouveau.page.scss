@@ -153,6 +153,82 @@ section,
   }
 }
 
+.section-wrapper {
+  padding: var(--page-margin) var(--page-margin) 0;
+}
+
+.details-sous-titre {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  line-height: 1;
+  color: var(--ion-color-secondary);
+  text-transform: uppercase;
+}
+
+.chapitres-wrapper {
+  margin-top: var(--page-margin);
+  padding: 0px var(--page-margin) var(--page-margin);
+
+  .chapitres-liste {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    .chapitre-item {
+      font-size: 16px;
+      color: var(--ion-color-primary);
+      margin-top: 0.75em;
+
+      & + .open-hour-item {
+        margin-top: var(--page-margin);
+      }
+
+      .schedule-outer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .schedule-day {
+          display: block;
+          padding-right: var(--page-margin);
+          width: 80%;
+          font-size: 16px;
+          font-weight: 500;
+          color: var(--ion-color-primary);
+        }
+
+        .schedule-hours {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          .schedule-separator {
+            margin: 0px var(--page-margin);
+            line-height: 1;
+          }
+
+          .schedule-value {
+            flex: 0 1 100%;
+            font-weight: 500;
+            color: var(--ion-color-primary);
+
+            &:first-child {
+              text-align: start;
+            }
+            &:last-child {
+              text-align: end;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .form-actions-wrapper {
   --ion-grid-column-padding: calc(var(--page-margin) / 2);
 

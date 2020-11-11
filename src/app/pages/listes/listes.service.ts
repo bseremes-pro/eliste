@@ -40,7 +40,7 @@ export class LivresService {
     // on supprime les champs générés
     delete base.id;
     delete base.isShell;
-    return this.afStore.collection('listes').add({ ...base });
+    return this.afStore.collection('elistes').add({ ...base });
   }
 
   /**
@@ -55,7 +55,7 @@ export class LivresService {
     delete base.id;
     delete base.isShell;
     return this.afStore
-      .collection('listes')
+      .collection('elistes')
       .doc(id)
       .set({ ...base });
   }
@@ -65,7 +65,7 @@ export class LivresService {
    */
   public getListeListesDataSource(): Observable<Array<LivreBaseModel>> {
     return this.afStore
-      .collection<LivreBaseModel>('listes')
+      .collection<LivreBaseModel>('elistes')
       .valueChanges({ idField: 'id' })
       .pipe(
         map((actions) =>
@@ -107,7 +107,7 @@ export class LivresService {
    */
   private getListeBaseDataSource(id: string): Observable<LivreBaseModel> {
     return this.afStore
-      .doc<LivreBaseModel>('listes/' + id)
+      .doc<LivreBaseModel>('elistes/' + id)
       .snapshotChanges()
       .pipe(
         map((a) => {

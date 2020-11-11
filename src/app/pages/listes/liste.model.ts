@@ -9,9 +9,8 @@ export class ListeValeurModel extends ShellModel {
   }
 }
 export class SchemaItem extends ShellModel {
-  nom: string;
+  label: string;
   type: string;
-  estTableau: boolean;
 
   constructor() {
     super();

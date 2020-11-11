@@ -1,11 +1,13 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormGroup, FormControl, FormArray } from '@angular/forms';
+import { ModalController, IonRouterOutlet } from '@ionic/angular';
 
 import { LivresService } from '../../listes.service';
 import { ListesService } from '../../../../services/listes.service';
 
 // import { BoutiqueProduitModel } from '../livre-details.model';
+import { FirebaseCreateUserModal } from '../../pops/champs/liste-champs.modal';
 
 import { DataStore } from '../../../../shell/data-store';
 
@@ -19,6 +21,7 @@ import { DataStore } from '../../../../shell/data-store';
 })
 export class LivreNouveauPage implements OnInit {
   createUserForm: FormGroup;
+  schema = [];
 
   /* @HostBinding('class.is-shell') get isShell() {
     return ((this.boutique && this.boutique.isShell)) ? true : false;
@@ -28,23 +31,59 @@ export class LivreNouveauPage implements OnInit {
     public firebaseService: LivresService,
     public listeService: ListesService,
     public router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public modalController: ModalController,
+    private routerOutlet: IonRouterOutlet
   ) {}
 
   ngOnInit() {
     this.route.data.subscribe((resolvedRouteData) => {
       this.createUserForm = new FormGroup({
-        titre: new FormControl('Ma liste', Validators.required),
-        desc: new FormControl(
-          'Une phrase sans verbe de description de ma liste...'
-        ),
+        titre: new FormControl('Nom de la liste', Validators.required),
+        desc: new FormControl('Phrase de description de la liste...'),
+        schema: new FormArray([]),
       });
     });
   }
 
-  createUser() {
+  async creerChamps() {
+    const modal = await this.modalController.create({
+      component: FirebaseCreateUserModal,
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl,
+    });
+
+    modal.onDidDismiss().then((avatar) => {
+      if (avatar.data != null) {
+        this.schema.push(avatar.data);
+      }
+    });
+    await modal.present();
+  }
+
+  async modifierChamps(index) {
+    const modal = await this.modalController.create({
+      component: FirebaseCreateUserModal,
+      componentProps: {
+        champs: this.schema[index],
+      },
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl,
+    });
+
+    modal.onDidDismiss().then((avatar) => {
+      if (avatar.data != null) {
+        this.schema[index] = avatar.data;
+      }
+    });
+    await modal.present();
+  }
+
+  creer() {
     this.firebaseService
-      .creerListe(this.createUserForm.value)
+      .creerListe(
+        Object.assign({}, this.createUserForm.value, { schema: this.schema })
+      )
       .then((reponse) => {
         this.router.navigate(['app/listes/details', reponse.id]);
       });
